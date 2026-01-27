@@ -1,0 +1,227 @@
+/* Custom Properties */
+:root {
+    --primary: #00d4aa;
+    --primary-hover: #00f5c4;
+    --background: #0a0a0f;
+    --surface: #12121a;
+    --text: #e0e0e0;
+    --text-muted: #888;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
+}
+
+/* Override Pico dark theme */
+[data-theme="dark"],
+:root:not([data-theme="light"]) {
+    --pico-background-color: var(--background);
+    --pico-color: var(--text);
+    --pico-primary: var(--primary);
+    --pico-primary-hover: var(--primary-hover);
+}
+
+/* Base */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    padding: 2rem 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+}
+
+.avatar-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 1.5rem;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 30px rgba(0, 212, 170, 0.3);
+}
+
+.avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 30px rgba(0, 212, 170, 0.3);
+    font-family: var(--font-mono);
+    font-size: 3rem;
+    color: var(--primary);
+}
+
+h1 {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.tagline {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin: 0;
+    min-height: 1.5em;
+}
+
+.typing-text {
+    color: var(--primary);
+}
+
+.cursor {
+    color: var(--primary);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Section Headers */
+h2 {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+    text-transform: lowercase;
+}
+
+/* Links Section */
+.links {
+    padding: 2rem 0;
+}
+
+.links nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.link-card:hover {
+    border-color: var(--primary);
+    background: rgba(0, 212, 170, 0.05);
+    transform: translateX(4px);
+}
+
+.link-icon {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.link-text {
+    color: var(--text);
+}
+
+.link-card:hover .link-text {
+    color: var(--primary);
+}
+
+/* Vibes Section */
+.vibes {
+    padding: 2rem 0;
+}
+
+.vibes p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+}
+
+.vibes p:last-of-type {
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    padding: 3rem 0 2rem;
+    text-align: center;
+    border-top: 1px solid var(--surface);
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero {
+        padding: 3rem 0 2rem;
+    }
+
+    .avatar-container,
+    .avatar,
+    .avatar-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+}
